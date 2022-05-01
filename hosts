@@ -1,0 +1,19 @@
+---
+all:
+
+juniper_devices:
+  hosts:
+    Host_1:
+      ansible_host: x.x.x.x
+    Host_2:
+      ansible_host: x.x.x.x
+    Host_3: 
+      ansible_host: x.x.x.x
+    Host_4:
+      ansible_host: x.x.x.x
+    SRX_Swansea:
+      ansible_host: x.x.x.x
+  vars:
+    ansible_user: DEVICE_USERNAME
+    ansible_password: DEVICE_PASSWORD
+

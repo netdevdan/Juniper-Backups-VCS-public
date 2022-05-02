@@ -5,40 +5,40 @@
   gather_facts: false
 
   tasks:
-#=======#
+# =======
     - name: "Git: is it up-to-date?"
       git:
         repo: XXX@github.com:GITHUB_USERNAME/REPO_NAME
         dest: /PATH/TO/WORKING/DIR
-        update: yes
+        update: true
         version: master
       register: git
       ignore_errors: true
-    - debug:
+    - ansible.builtin.debug:
         var: git
-#=======#
+# =======
     - name: Git - Adding
-      shell: "git add *"
+      command: "git add *"
       args:
         chdir: /PATH/TO/WORKING/DIR/configuration_backups_vcs
       register: gitadd
       when: git.msg is defined
-    - debug:
+    - ansible.builtin.debug:
         var: gitadd.cmd
-#=======#
+# =======
     - name: Git - commiting
-      shell: git commit -m "Ansible Backup" 
+      command: git commit -m "Ansible Backup"
       args:
         chdir: /PATH/TO/WORKING/DIR/configuration_backups_vcs
       register: gitcommit
       when: git.msg is defined
-    - debug:
+    - ansible.builtin.debug:
         var: gitcommit.stdout
-#=======# 
+# =======
     - name: Git - push
-      shell: git push 
+      command: git push
       args:
         chdir: /PATH/TO/WORKING/DIR/configuration_backups_vcs
       register: gitpush
       when: git.msg is defined
-    - debug:
+    - ansible.builtin.debug:

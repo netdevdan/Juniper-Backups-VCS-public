@@ -5,7 +5,7 @@
     - Juniper.junos
   connection: local
   gather_facts: false
-  #gather facts from control node (here)
+  # gather facts from control node (here)
 
   vars:
     user: "{{ ansible_user }}"
@@ -16,7 +16,6 @@
       juniper_junos_config:
         retrieve: "committed"
         dest_dir: "configuration_backups_vcs/{{ inventory_hostname }}"
-        #dest: "configuration_backups_vcs/{{ inventory_hostname }}/{{ inventory_hostname }}-.conf"
+        # dest: "configuration_backups_vcs/{{ inventory_hostname }}/{{ inventory_hostname }}-.conf"
           # the above can also be used to specify filename, and manipulate with date etc if req.
       register: response
-

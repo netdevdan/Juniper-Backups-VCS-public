@@ -1,0 +1,6 @@
+---
+- name: PB1
+  import_playbook: backup_pb.yml
+
+- name: PB2
+  import_playbook: git_control.yml

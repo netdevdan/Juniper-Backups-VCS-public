@@ -5,7 +5,7 @@
   gather_facts: false
 
   tasks:
-#================================
+#=======#
     - name: "Git: is it up-to-date?"
       git:
         repo: XXX@github.com:GITHUB_USERNAME/REPO_NAME
@@ -16,7 +16,7 @@
       ignore_errors: true
     - debug:
         var: git
-#================================
+#=======#
     - name: Git - Adding
       shell: "git add *"
       args:
@@ -25,7 +25,7 @@
       when: git.msg is defined
     - debug:
         var: gitadd.cmd
-#================================
+#=======#
     - name: Git - commiting
       shell: git commit -m "Ansible Backup" 
       args:
@@ -34,7 +34,7 @@
       when: git.msg is defined
     - debug:
         var: gitcommit.stdout
-#================================  
+#=======# 
     - name: Git - push
       shell: git push 
       args:

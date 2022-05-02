@@ -17,4 +17,4 @@ Ensure you have the correct Junos pip and Ansible galaxy packages installed:
 - pip3 install ansible
 - ansible-galaxy install Juniper.junos
 
-Blog post containing the basics: https://ducko.uk/ansible-juniper-configuration-and-vcs/
+Blog post around the script: https://ducko.uk/ansible-juniper-configuration-and-vcs/
